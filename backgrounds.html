@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 Background Options - Trà Sâm Trường Nhân</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f0f0f0;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #333;
+            font-size: 2.5rem;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .option-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .option-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.15);
+        }
+
+        .option-preview {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+            position: relative;
+        }
+
+        .option-info {
+            padding: 2rem;
+        }
+
+        .option-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: #333;
+            font-weight: 800;
+        }
+
+        .option-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .features {
+            margin-bottom: 1.5rem;
+        }
+
+        .features h4 {
+            color: #7DBE6F;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .features ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .features li {
+            color: #666;
+            padding: 0.3rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #7DBE6F;
+            font-weight: bold;
+        }
+
+        .btn-select {
+            display: inline-block;
+            background: #7DBE6F;
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-select:hover {
+            background: #5F9E56;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(125, 190, 111, 0.3);
+        }
+
+        /* OPTION 1: Leaf Pattern Premium */
+        .preview-option1 {
+            background: linear-gradient(135deg, #7DBE6F 0%, #A8D5BA 100%);
+            background-attachment: fixed;
+        }
+
+        .preview-option1::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(168, 213, 186, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(125, 190, 111, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(200, 230, 215, 0.3) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .preview-option1::after {
+            content: '🌿 LEAF PATTERN PREMIUM\ASoft Gradient with Leaf Motifs';
+            white-space: pre;
+            z-index: 2;
+            position: relative;
+        }
+
+        /* OPTION 2: Gradient Nature */
+        .preview-option2 {
+            background: linear-gradient(180deg, #5F9E56 0%, #7DBE6F 50%, #A8D5BA 100%);
+        }
+
+        .preview-option2::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.05) 50%, transparent 70%),
+                linear-gradient(-45deg, transparent 30%, rgba(0,0,0,0.05) 50%, transparent 70%);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+
+        .preview-option2::after {
+            content: '🍃 GRADIENT NATURE\AMoody Green with Diagonal Pattern';
+            white-space: pre;
+            z-index: 2;
+            position: relative;
+        }
+
+        /* OPTION 3: Subtle Texture */
+        .preview-option3 {
+            background: linear-gradient(135deg, #6FA86C 0%, #7DBE6F 50%, #99C698 100%);
+        }
+
+        .preview-option3::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                radial-gradient(circle at 1px 1px, rgba(255,255,255,0.2) 1px, transparent 1px),
+                radial-gradient(circle at 40px 60px, rgba(0,0,0,0.1) 1px, transparent 1px);
+            background-size: 50px 50px, 150px 150px;
+            pointer-events: none;
+        }
+
+        .preview-option3::after {
+            content: '🌱 SUBTLE TEXTURE\ABotanical Pattern with Dotted Texture';
+            white-space: pre;
+            z-index: 2;
+            position: relative;
+        }
+
+        .note {
+            background: #fff9e6;
+            border-left: 4px solid #7DBE6F;
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-top: 2rem;
+            color: #666;
+        }
+
+        .note strong {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 3 Lựa Chọn Background Mới cho Website</h1>
+
+        <div class="options-grid">
+            <!-- OPTION 1 -->
+            <div class="option-card">
+                <div class="option-preview preview-option1"></div>
+                <div class="option-info">
+                    <div class="option-title">🌿 Leaf Pattern Premium</div>
+                    <p class="option-description">
+                        Background gradient xanh lá mềm mại với các circle hoa lá tinh tế, tạo cảm giác cao cấp và thiên nhiên.
+                    </p>
+                    <div class="features">
+                        <h4>Đặc Điểm:</h4>
+                        <ul>
+                            <li>Gradient xanh lá sang màu mint</li>
+                            <li>Radial gradient circles (hoa lá)</li>
+                            <li>Cảm giác premium & êm dịu</li>
+                            <li>Phù hợp với sản phẩm cao cấp</li>
+                        </ul>
+                    </div>
+                    <button class="btn-select" onclick="applyBackground('option1')">
+                        ✓ Chọn Lựa Chọn Này
+                    </button>
+                </div>
+            </div>
+
+            <!-- OPTION 2 -->
+            <div class="option-card">
+                <div class="option-preview preview-option2"></div>
+                <div class="option-info">
+                    <div class="option-title">🍃 Gradient Nature</div>
+                    <p class="option-description">
+                        Background gradient từ xanh đậm xuống xanh nhạt với pattern đường chéo, tạo cảm giác động & tự nhiên.
+                    </p>
+                    <div class="features">
+                        <h4>Đặc Điểm:</h4>
+                        <ul>
+                            <li>Gradient 180° từ xanh đậm → nhạt</li>
+                            <li>Diagonal stripe pattern</li>
+                            <li>Cảm giác năng động & modern</li>
+                            <li>Bold & chuyên nghiệp</li>
+                        </ul>
+                    </div>
+                    <button class="btn-select" onclick="applyBackground('option2')">
+                        ✓ Chọn Lựa Chọn Này
+                    </button>
+                </div>
+            </div>
+
+            <!-- OPTION 3 -->
+            <div class="option-card">
+                <div class="option-preview preview-option3"></div>
+                <div class="option-info">
+                    <div class="option-title">🌱 Subtle Texture</div>
+                    <p class="option-description">
+                        Background gradient xanh tự nhiên với texture tinh tế (polka dots & circles), cảm giác organic & tinh tế.
+                    </p>
+                    <div class="features">
+                        <h4>Đặc Điểm:</h4>
+                        <ul>
+                            <li>Gradient xanh tự nhiên</li>
+                            <li>Dotted texture pattern</li>
+                            <li>Cảm giác organic & tinh tế</li>
+                            <li>Balanced & harmonious</li>
+                        </ul>
+                    </div>
+                    <button class="btn-select" onclick="applyBackground('option3')">
+                        ✓ Chọn Lựa Chọn Này
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="note">
+            <strong>📝 Hướng Dẫn:</strong> Nhấp vào nút "Chọn Lựa Chọn Này" để xem preview trên trang chính của website. 
+            Hệ thống sẽ cập nhật background ngay lập tức!
+        </div>
+    </div>
+
+    <script>
+        function applyBackground(option) {
+            // Save choice to sessionStorage
+            sessionStorage.setItem('backgroundChoice', option);
+            
+            // Redirect to main website
+            window.location.href = `http://localhost:8000/?bg=${option}#hero`;
+        }
+
+        // Log option selections
+        console.log('Backgrounds Demo Page Loaded');
+        console.log('Option 1: Leaf Pattern Premium');
+        console.log('Option 2: Gradient Nature');
+        console.log('Option 3: Subtle Texture');
+    </script>
+</body>
+</html>

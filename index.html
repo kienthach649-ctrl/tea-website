@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trà Sâm Trường Nhân - Chiến dịch 2026. Trà cao cấp từ Ngọc Linh, 100% tự nhiên với 7 loại thảo mộc quý hiếm. Túi lọc 2g tiện lợi.">
+    <meta name="keywords" content="trà sâm, Ngọc Linh, thảo mộc, sâm Việt, wellness, sức khỏe">
+    <title>Trà Sâm Trường Nhân | Thương Trà Cao Cấp Ngọc Linh 2026</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="new-features.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <span class="logo-icon">🌿</span>
+                <div class="logo-text">
+                    <div class="logo-main">Trà Sâm Trường Nhân</div>
+                    <div class="logo-sub">Ngọc Linh Premium</div>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#products" class="nav-main">Sản Phẩm</a></li>
+                <li><a href="#benefits" class="nav-main">Lợi Ích</a></li>
+                <li><a href="#story" class="nav-main">Câu Chuyện</a></li>
+                <li><a href="#blog" class="nav-main">Blog</a></li>
+                <li><a href="#faq" class="nav-main">FAQ</a></li>
+                <li><a href="#greeting-cards" class="nav-main">🎁 Thiệp Tặng Quà</a></li>
+            </ul>
+            <ul class="nav-links nav-secondary">
+                <li><a href="#testimonials">Đánh Giá</a></li>
+                <li><a href="#loyalty">Loyalty</a></li>
+                <li><a href="#about">Về Chúng Tôi</a></li>
+                <li><a href="#contact">Liên Hệ</a></li>
+                <li style="display: flex; gap: 12px; align-items: center; padding-left: 8px; border-left: 1px solid rgba(255,255,255,0.2);">
+                    <a href="https://www.instagram.com/p/DZt9NUGDzVb/" target="_blank" title="Instagram" style="font-size: 16px; text-decoration: none;">📷</a>
+                    <a href="https://www.youtube.com/results?search_query=sâm+ngọc+linh" target="_blank" title="YouTube" style="font-size: 16px; text-decoration: none;">▶️</a>
+                    <a href="https://shopee.vn/search?keyword=sâm+ngọc+linh+trường+nhân" target="_blank" title="Shopee" style="font-size: 16px; text-decoration: none;">🛒</a>
+                    <a href="https://www.tiktok.com/@samngoclinhtruongnhan" target="_blank" title="TikTok" style="font-size: 16px; text-decoration: none;">🎵</a>
+                </li>
+                <li><a href="javascript:void(0)" class="cart-btn" onclick="openCart()">
+                    <svg class="cart-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span id="cart-count" class="cart-badge">0</span>
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="hero-background.png" alt="Hero Background - Premium Ginseng Tea">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <div class="hero-text-wrapper">
+                    <p class="hero-tagline">🌿 TRÀ SÂM TRƯỜNG NHÂN | CHIẾN DỊCH SỐ 2026</p>
+                    <h1 class="hero-title">
+                        GIỮ NÉT THƯƠNG TRÀ<br>
+                        <span class="gradient-text">GỬI TRAO GIÁ TRỊ HÔM NAY</span>
+                    </h1>
+                    <p class="hero-description">
+                        Một chén trà, một khoảng dừng ý nghĩa. Sự giao thoa giữa văn hóa thương trà Việt gần gũi 
+                        và 7 loại thảo mộc quý hiếm được tuyển chọn từ nơi rừng Ngọc Linh thiêng liêng, 
+                        trong định dạng túi lọc 2g tiện lợi cho nhịp sống hiện đại.
+                    </p>
+                </div>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-lg" onclick="scrollToSection('products')">
+                        🛍️ Khám Phá Sản Phẩm
+                    </button>
+                    <button class="btn btn-outline btn-lg" onclick="scrollToSection('about')">
+                        📖 Tìm Hiểu Thêm
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">7</span>
+                        <span class="stat-label">Loại Thảo Mộc</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Tự Nhiên</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">2g</span>
+                        <span class="stat-label">Túi Lọc</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">10K+</span>
+                        <span class="stat-label">Khách Hàng Lương</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <h2 class="section-title">🌿 NGUYÊN LIỆU CỦA SẢN PHẨM</h2>
+            <p class="section-subtitle">7 loại thảo mộc quý hiếm được tuyển chọn từ Ngọc Linh</p>
+            
+            <div class="products-grid">
+                <!-- Product 1: Sâm Ngọc Linh -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="sam-ngoc-linh.png" alt="Sâm Ngọc Linh">
+                        <div class="product-badge">⭐ Chính Yếu</div>
+                    </div>
+                    <h3 class="product-name">Sâm Ngọc Linh</h3>
+                    <p class="product-description">Sâm quý hiếm nhất của rừng Ngọc Linh, giúp tăng cường sức khỏe và sức đề kháng.</p>
+                    <div class="product-price">
+                        <span class="price">450,000₫</span>
+                        <span class="badge-new">Mới</span>
+                    </div>
+                    <button class="btn btn-primary btn-sm" onclick="addToCart('Sâm Ngọc Linh', 450000)">Thêm Vào Giỏ</button>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/p/DZt9NUGDzVb/" target="_blank" title="Instagram">📷</a>
+                        <a href="https://www.youtube.com/results?search_query=sâm+ngọc+linh" target="_blank" title="YouTube">▶️</a>
+                        <a href="https://shopee.vn/search?keyword=sâm+ngọc+linh+trường+nhân" target="_blank" title="Shopee">🛒</a>
+                        <a href="https://www.tiktok.com/@samngoclinhtruongnhan" target="_blank" title="TikTok">🎵</a>
+                    </div>
+                </div>
+
+                <!-- Product 2: Hồng Sâm -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="hong-sam.png" alt="Hồng Sâm">
+                        <div class="product-badge">⭐ Tonic</div>
+                    </div>
+                    <h3 class="product-name">Hồng Sâm</h3>
+                    <p class="product-description">Hồng sâm chế biến kỹ, tăng cường năng lượng và sự tỉnh táo.</p>
+                    <div class="product-price">
+                        <span class="price">380,000₫</span>
+                        <span class="badge-hot">Hot</span>
+                    </div>
+                    <button class="btn btn-primary btn-sm" onclick="addToCart('Hồng Sâm', 380000)">Thêm Vào Giỏ</button>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/p/DZt9NUGDzVb/" target="_blank" title="Instagram">📷</a>
+                        <a href="https://www.youtube.com/results?search_query=sâm+ngọc+linh" target="_blank" title="YouTube">▶️</a>
+                        <a href="https://shopee.vn/search?keyword=sâm+ngọc+linh+trường+nhân" target="_blank" title="Shopee">🛒</a>
+                        <a href="https://www.tiktok.com/@samngoclinhtruongnhan" target="_blank" title="TikTok">🎵</a>
+                    </div>
+                </div>
+
+                <!-- Product 3: Linh Chi -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="linh-chi.png" alt="Linh Chi">
+                        <div class="product-badge">⭐ Miễn Dịch</div>
+                    </div>
+                    <h3 class="product-name">Linh Chi</h3>
+                    <p class="product-description">Linh chi từ rừng nguyên sinh, giúp tăng cường miễn dịch và điều hòa cơ thể.</p>
+                    <div class="product-price">
+                        <span class="price">420,000₫</span>
+                    </div>
+                    <button class="btn btn-primary btn-sm" onclick="addToCart('Linh Chi', 420000)">Thêm Vào Giỏ</button>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/p/DZt9NUGDzVb/" target="_blank" title="Instagram">📷</a>
+                        <a href="https://www.youtube.com/results?search_query=sâm+ngọc+linh" target="_blank" title="YouTube">▶️</a>
+                        <a href="https://shopee.vn/search?keyword=sâm+ngọc+linh+trường+nhân" target="_blank" title="Shopee">🛒</a>
+                        <a href="https://www.tiktok.com/@samngoclinhtruongnhan" target="_blank" title="TikTok">🎵</a>
+                    </div>
+                </div>
+
+                <!-- Product 4: Nấm Lim Xanh -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="nam-lim-xanh.png" alt="Nấm Lim Xanh">
+                        <div class="product-badge">⭐ Chuyên Dụng</div>
+                    </div>
+                    <h3 class="product-name">Nấm Lim Xanh</h3>
+                    <p class="product-description">Nấm quý từ rừng Ngọc Linh, hỗ trợ sức khỏe toàn diện.</p>
+                    <div class="product-price">
+                        <span class="price">350,000₫</span>
+                    </div>
+                    <button class="btn btn-primary btn-sm" onclick="addToCart('Nấm Lim Xanh', 350000)">Thêm Vào Giỏ</button>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/p/DZt9NUGDzVb/" target="_blank" title="Instagram">📷</a>
+                        <a href="https://www.youtube.com/results?search_query=sâm+ngọc+linh" target="_blank" title="YouTube">▶️</a>
+                        <a href="https://shopee.vn/search?keyword=sâm+ngọc+linh+trường+nhân" target="_blank" title="Shopee">🛒</a>
+                        <a href="https://www.tiktok.com/@samngoclinhtruongnhan" target="_blank" title="TikTok">🎵</a>
+                    </div>
+                </div>
+
+                <!-- Product 5: Đông Trùng Hạ Thảo -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="dong-trung-ha-thao.png" alt="Đông Trùng Hạ Thảo">
+                        <div class="product-badge">⭐ Premium</div>
+                    </div>
+                    <h3 class="product-name">Đông Trùng Hạ Thảo</h3>
+                    <p class="product-description">Đông trùng hạ thảo tự nhiên, hỗ trợ sức bền và sự phục hồi.</p>
+                    <div class="product-price">
+                        <span class="price">550,000₫</span>
+                    </div>
+                    <button class="btn btn-primary btn-sm" onclick="addToCart('Đông Trùng Hạ Thảo', 550000)">Thêm Vào Giỏ</button>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/p/DZt9NUGDzVb/" target="_blank" title="Instagram">📷</a>
+                        <a href="https://www.youtube.com/results?search_query=sâm+ngọc+linh" target="_blank" title="YouTube">▶️</a>
+                        <a href="https://shopee.vn/search?keyword=sâm+ngọc+linh+trường+nhân" target="_blank" title="Shopee">🛒</a>
+                        <a href="https://www.tiktok.com/@samngoclinhtruongnhan" target="_blank" title="TikTok">🎵</a>
+                    </div>
+                </div>
+
+                <!-- Product 6: Thiên Niên Tửu -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="thien-nien-tu.png" alt="Thiên Niên Tử">
+                        <div class="product-badge">⭐ Hiếm</div>
+                    </div>
+                    <h3 class="product-name">Thiên Niên Tử</h3>
+                    <p class="product-description">Thiên niên tử từ rừng nguyên sinh, giúp cân bằng chức năng cơ thể.</p>
+                    <div class="product-price">
+                        <span class="price">480,000₫</span>
+                    </div>
+                    <button class="btn btn-primary btn-sm" onclick="addToCart('Thiên Niên Tử', 480000)">Thêm Vào Giỏ</button>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/p/DZt9NUGDzVb/" target="_blank" title="Instagram">📷</a>
+                        <a href="https://www.youtube.com/results?search_query=sâm+ngọc+linh" target="_blank" title="YouTube">▶️</a>
+                        <a href="https://shopee.vn/search?keyword=sâm+ngọc+linh+trường+nhân" target="_blank" title="Shopee">🛒</a>
+                        <a href="https://www.tiktok.com/@samngoclinhtruongnhan" target="_blank" title="TikTok">🎵</a>
+                    </div>
+                </div>
+
+                <!-- Product 7: Ginseng Hoàng Kỳ -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="ginseng-hoang-ky.png" alt="Ginseng Hoàng Kỳ">
+                        <div class="product-badge">⭐ Cổ Truyền</div>
+                    </div>
+                    <h3 class="product-name">Ginseng Hoàng Kỳ</h3>
+                    <p class="product-description">Ginseng hoàng kỳ kết hợp với sâm, giúp tăng cường năng lượng tự nhiên.</p>
+                    <div class="product-price">
+                        <span class="price">400,000₫</span>
+                    </div>
+                    <button class="btn btn-primary btn-sm" onclick="addToCart('Ginseng Hoàng Kỳ', 400000)">Thêm Vào Giỏ</button>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/p/DZt9NUGDzVb/" target="_blank" title="Instagram">📷</a>
+                        <a href="https://www.youtube.com/results?search_query=sâm+ngọc+linh" target="_blank" title="YouTube">▶️</a>
+                        <a href="https://shopee.vn/search?keyword=sâm+ngọc+linh+trường+nhân" target="_blank" title="Shopee">🛒</a>
+                        <a href="https://www.tiktok.com/@samngoclinhtruongnhan" target="_blank" title="TikTok">🎵</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Combo Section -->
+            <div class="combo-section">
+                <h2 class="section-title">🎁 COMBO & TIỆN LỢI</h2>
+                <p class="section-subtitle">Các gói sản phẩm được tuyển chọn cho bạn</p>
+                
+                <div class="products-grid">
+                <!-- Product 8: Set Quà Tặng -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="set-qua-tang.png" alt="Set Quà Tặng 3 Hộp Sâm">
+                        <div class="product-badge">🎁 Quà Tặng</div>
+                    </div>
+                    <h3 class="product-name">Set Quà Tặng 3 Hộp Sâm</h3>
+                    <p class="product-description">Bộ 3 hộp sâm đặc biệt, ideal để tặng cho người thân yêu.</p>
+                    <div class="product-price">
+                        <span class="price">1,500,000₫</span>
+                        <span class="badge-hot">Hot</span>
+                    </div>
+                    <button class="btn btn-primary btn-sm" onclick="addToCart('Set Quà Tặng 3 Hộp Sâm', 1500000)">Thêm Vào Giỏ</button>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/p/DZt9NUGDzVb/" target="_blank" title="Instagram">📷</a>
+                        <a href="https://www.youtube.com/results?search_query=sâm+ngọc+linh" target="_blank" title="YouTube">▶️</a>
+                        <a href="https://shopee.vn/search?keyword=sâm+ngọc+linh+trường+nhân" target="_blank" title="Shopee">🛒</a>
+                        <a href="https://www.tiktok.com/@samngoclinhtruongnhan" target="_blank" title="TikTok">🎵</a>
+                    </div>
+                </div>
+
+                <!-- Product 9: Trà Sâm Túi Lọc -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="tra-sam-tui-loc.png" alt="Trà Sâm Túi Lọc">
+                        <div class="product-badge">⭐ Tiện Lợi</div>
+                    </div>
+                    <h3 class="product-name">Trà Sâm Túi Lọc</h3>
+                    <p class="product-description">Túi lọc 2g tiện lợi, pha nhanh chóng, hoàn hảo cho công sở.</p>
+                    <div class="product-price">
+                        <span class="price">370,000₫</span>
+                    </div>
+                    <button class="btn btn-primary btn-sm" onclick="addToCart('Trà Sâm Túi Lọc', 370000)">Thêm Vào Giỏ</button>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/p/DZt9NUGDzVb/" target="_blank" title="Instagram">📷</a>
+                        <a href="https://www.youtube.com/results?search_query=sâm+ngọc+linh" target="_blank" title="YouTube">▶️</a>
+                        <a href="https://shopee.vn/search?keyword=sâm+ngọc+linh+trường+nhân" target="_blank" title="Shopee">🛒</a>
+                        <a href="https://www.tiktok.com/@samngoclinhtruongnhan" target="_blank" title="TikTok">🎵</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits-section">
+        <div class="container">
+            <h2 class="section-title">Lợi Ích Vượt Trội</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">💪</div>
+                    <h3>Tăng Cường Sức Khỏe</h3>
+                    <p>Các thảo mộc quý hiếm giúp tăng cường miễn dịch và sức khỏe toàn diện.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Năng Lượng Tự Nhiên</h3>
+                    <p>Năng lượng bền vững không gây căng thẳng với cơ thể.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌿</div>
+                    <h3>100% Tự Nhiên</h3>
+                    <p>Không chứa chất bảo quản hay hóa chất nhân tạo.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏆</div>
+                    <h3>Chất Lượng Cao</h3>
+                    <p>Được tuyển chọn từ Ngọc Linh - nơi có sâm tốt nhất Việt Nam.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section id="story" class="story-section">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-image">
+                    <img src="sam-ngoc-linh-story.png" alt="Câu Chuyện Sâm Ngọc Linh">
+                </div>
+                <div class="story-text">
+                    <h2>Câu Chuyện Trà Sâm Trường Nhân</h2>
+                    <p>Một chén trà, một khoảng dừng ý nghĩa. Chúng tôi tin rằng sâm không chỉ là một thảo mộc quý hiếm, mà còn là một cách để kết nối con người với thiên nhiên và với chính mình.</p>
+                    <p>Mỗi sản phẩm của chúng tôi được tuyển chọn kỹ lưỡng từ Ngọc Linh - nơi mà các loại thảo mộc phát triển tự nhiên trong môi trường nguyên sinh.</p>
+                    <p>Chúng tôi cam kết mang đến cho bạn những sản phẩm chất lượng cao, tự nhiên và an toàn, giúp bạn chăm sóc sức khỏe theo cách của cha ông ta.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Đánh Giá Từ Khách Hàng</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Sâm của Trường Nhân quả thực rất tốt. Sau khi uống, tôi cảm thấy sức khỏe cải thiện rõ rệt."</p>
+                    <p class="testimonial-author">- Nguyễn Văn A</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Rất hài lòng với chất lượng và dịch vụ. Sẽ tiếp tục mua sâm từ đây."</p>
+                    <p class="testimonial-author">- Trần Thị B</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Tôi rất yêu thích túi lọc, tiện lợi để mang đi khắp nơi."</p>
+                    <p class="testimonial-author">- Lê Văn C</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section (Placeholder) -->
+    <section id="blog" class="blog-section">
+        <div class="container">
+            <h2 class="section-title">Blog Sức Khỏe</h2>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image"></div>
+                    <div class="blog-content">
+                        <span class="blog-category">Sức Khỏe</span>
+                        <h3 class="blog-title">Lợi Ích Của Sâm Ngọc Linh</h3>
+                        <p class="blog-date">📅 20 Tháng 11, 2026</p>
+                        <p class="blog-excerpt">Khám phá những lợi ích tuyệt vời mà sâm ngọc linh mang lại cho sức khỏe của bạn...</p>
+                        <a href="#" class="read-more">Đọc Tiếp →</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-image"></div>
+                    <div class="blog-content">
+                        <span class="blog-category">Hướng Dẫn</span>
+                        <h3 class="blog-title">Cách Pha Trà Sâm Đúng</h3>
+                        <p class="blog-date">📅 18 Tháng 11, 2026</p>
+                        <p class="blog-excerpt">Hướng dẫn chi tiết cách pha trà sâm để lấy hết những dưỡng chất quý báu...</p>
+                        <a href="#" class="read-more">Đọc Tiếp →</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-image"></div>
+                    <div class="blog-content">
+                        <span class="blog-category">So Sánh</span>
+                        <h3 class="blog-title">Sâm Ngọc Linh vs Các Loại Sâm Khác</h3>
+                        <p class="blog-date">📅 15 Tháng 11, 2026</p>
+                        <p class="blog-excerpt">So sánh chi tiết sâm ngọc linh với các loại sâm khác trên thị trường...</p>
+                        <a href="#" class="read-more">Đọc Tiếp →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Câu Hỏi Thường Gặp</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>❓ Sâm Ngọc Linh khác gì với sâm thường?</span>
+                        <span class="faq-toggle">⌄</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sâm ngọc linh được trồng tự nhiên trong rừng Ngọc Linh độc đáo, có thời gian sinh trưởng lâu hơn, nên có hàm lượng dưỡng chất cao hơn các loại sâm khác.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>❓ Có an toàn cho bà bầu uống không?</span>
+                        <span class="faq-toggle">⌄</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Trước khi sử dụng bất kỳ sản phẩm nào, bạn nên tư vấn với bác sĩ hoặc chuyên gia y tế để được hướng dẫn phù hợp.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>❓ Bảo quản sâm như thế nào?</span>
+                        <span class="faq-toggle">⌄</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Bảo quản sâm ở nơi thoáng khí, tránh nơi ẩm ướt và ánh sáng trực tiếp. Tốt nhất nên bảo quản ở tủ lạnh hoặc nơi mát.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>❓ Giao hàng mất bao lâu?</span>
+                        <span class="faq-toggle">⌄</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Chúng tôi giao hàng trong vòng 2-3 ngày làm việc tại thành phố, 3-5 ngày tại các tỉnh khác.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="about" class="team-section">
+        <div class="container">
+            <h2 class="section-title">Đội Ngũ Chúng Tôi</h2>
+            <p class="section-subtitle">Những người thực tâm với sâm và sức khỏe</p>
+            <div class="team-grid">
+                <div class="team-card team-leader">
+                    <div class="team-image">
+                        <img src="vu-thi-thanh-hien.png" alt="Vũ Thị Thành Hiền">
+                    </div>
+                    <h3 class="team-name">Vũ Thị Thành Hiền</h3>
+                    <p class="team-role">👑 Nhóm Trưởng</p>
+                    <p class="team-title">Quản Trị Kinh Doanh</p>
+                    <p class="team-bio">Đảm bảo quản lý hiệu quả mọi mặt hoạt động của đội ngũ.</p>
+                    <div class="team-contact">
+                        <small>📧 2024060916@dntu.edu.vn</small>
+                        <small>🆔 MSSV: 2024060916</small>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="le-thi-hong-hanh.png" alt="Lê Thị Hồng Hạnh">
+                    </div>
+                    <h3 class="team-name">Lê Thị Hồng Hạnh</h3>
+                    <p class="team-role">Logistics & Quản Lý Chuỗi</p>
+                    <p class="team-title">Cung Ứng</p>
+                    <p class="team-bio">Với hơn 10 năm kinh nghiệm trong ngành thương mại trà sâm, Hạnh là người tiên phong trong việc đưa sâm ngọc linh đến tay người tiêu dùng.</p>
+                    <div class="team-contact">
+                        <small>📧 25710779@dntu.edu.vn</small>
+                        <small>🆔 MSSV: 25710779</small>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="le-thi-to-quyen.png" alt="Lê Thị Tố Quyên">
+                    </div>
+                    <h3 class="team-name">Lê Thị Tố Quyên</h3>
+                    <p class="team-role">Quản Trị Kinh Doanh</p>
+                    <p class="team-title">Chuyên Gia Sản Phẩm</p>
+                    <p class="team-bio">Tố Quyên có chuyên môn sâu về các loại thảo mộc quý hiếm và quy trình chế biến trà sâm truyền thống.</p>
+                    <div class="team-contact">
+                        <small>📧 2024051010@dntu.edu.vn</small>
+                        <small>🆔 MSSV: 2024051010</small>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="ton-minh-quan.png" alt="Tô Minh Quân">
+                    </div>
+                    <h3 class="team-name">Tô Minh Quân</h3>
+                    <p class="team-role">Logistics & Quản Lý Chuỗi</p>
+                    <p class="team-title">Cung Ứng</p>
+                    <p class="team-bio">Chuyên về quản lý logistics và chuỗi cung ứng, đảm bảo sản phẩm đến tay khách hàng đúng hạn.</p>
+                    <div class="team-contact">
+                        <small>📧 25710471@dntu.edu.vn</small>
+                        <small>🆔 MSSV: 25710471</small>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="hoang-tu-khuyen.png" alt="Hoàng Tú Khuyên">
+                    </div>
+                    <h3 class="team-name">Hoàng Tú Khuyên</h3>
+                    <p class="team-role">Quản Trị Kinh Doanh</p>
+                    <p class="team-title">Chuyên Gia Tiếp Thị</p>
+                    <p class="team-bio">Tâm huyết với chiến lược marketing và phát triển thương hiệu Trà Sâm Trường Nhân.</p>
+                    <div class="team-contact">
+                        <small>📧 25710140@dntu.edu.vn</small>
+                        <small>🆔 MSSV: 25710140</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loyalty Section -->
+    <section id="loyalty" class="loyalty-section">
+        <div class="container">
+            <h2 class="section-title">Chương Trình Thành Viên</h2>
+            <p class="section-subtitle">Nhận điểm thưởng với mỗi lần mua hàng</p>
+            <div class="loyalty-benefits">
+                <div class="loyalty-benefit">
+                    <div class="benefit-number">100</div>
+                    <p>Điểm từ mỗi 100,000₫ chi tiêu</p>
+                </div>
+                <div class="loyalty-benefit">
+                    <div class="benefit-number">1000</div>
+                    <p>Điểm = 50,000₫ giảm giá</p>
+                </div>
+                <div class="loyalty-benefit">
+                    <div class="benefit-number">💎</div>
+                    <p>Hạng VIP với nhiều ưu đãi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Greeting Card Section -->
+    <section class="greeting-card-section" id="greeting-cards">
+        <div class="container">
+            <h2>Trang Trí Thiệp Tặng Quà</h2>
+            <p>Tạo một lời nhắn đặc biệt cho người thân yêu</p>
+            
+            <div class="card-container">
+                <!-- Card Preview Area -->
+                <div class="card-preview-area">
+                    <div class="card-templates">
+                        <div class="template-selector">
+                            <span>Chọn Mẫu Thiệp:</span>
+                            <div class="template-buttons">
+                                <button class="template-btn active" data-template="1" onclick="switchTemplate(1)">Mẫu 1</button>
+                                <button class="template-btn" data-template="2" onclick="switchTemplate(2)">Mẫu 2</button>
+                                <button class="template-btn" data-template="3" onclick="switchTemplate(3)">Mẫu 3</button>
+                                <button class="template-btn" data-template="4" onclick="switchTemplate(4)">Mẫu 4</button>
+                                <button class="template-btn" data-template="custom" onclick="switchTemplate('custom')">🎨 Tùy Chỉnh</button>
+                            </div>
+                        </div>
+
+                        <!-- Import Template Section -->
+                        <div class="template-import-section">
+                            <div class="import-buttons">
+                                <button class="import-btn" onclick="document.getElementById('image-upload').click()" title="Upload hình ảnh">📸 Upload Ảnh</button>
+                                <button class="import-btn" onclick="document.getElementById('json-upload').click()" title="Upload file JSON">📄 Upload JSON</button>
+                                <button class="import-btn" onclick="toggleCustomEditor()" title="Chỉnh sửa style">✏️ Chỉnh Sửa</button>
+                                <button class="import-btn" onclick="saveCustomTemplate()" title="Lưu template">💾 Lưu</button>
+                                <button class="import-btn" onclick="exportTemplate()" title="Xuất template">📤 Xuất</button>
+                            </div>
+                            <input type="file" id="image-upload" accept="image/*" style="display: none;" onchange="handleImageUpload(event)">
+                            <input type="file" id="json-upload" accept=".json" style="display: none;" onchange="handleJsonUpload(event)">
+                        </div>
+
+                        <div class="card-preview" id="card-preview">
+                            <div class="card-inner template-1">
+                                <div class="card-decoration card-top">✨</div>
+                                <h3 class="card-title">Tặng Yêu Thương</h3>
+                                <p class="card-message" id="preview-message">Viết lời nhắn của bạn tại đây...</p>
+                                <p class="card-signature" id="preview-signature">—</p>
+                                <div class="card-decoration card-bottom">🌿</div>
+                            </div>
+                        </div>
+
+                        <!-- Custom Template Editor -->
+                        <div class="custom-editor" id="custom-editor" style="display: none;">
+                            <h4>Chỉnh Sửa Template Tùy Chỉnh</h4>
+                            <div class="editor-group">
+                                <label for="custom-title">Tiêu Đề:</label>
+                                <input type="text" id="custom-title" placeholder="VD: Tặng Yêu Thương" maxlength="20">
+                            </div>
+                            <div class="editor-group">
+                                <label for="custom-bg-color">Màu Nền:</label>
+                                <input type="color" id="custom-bg-color" value="#F4D9A0">
+                            </div>
+                            <div class="editor-group">
+                                <label for="custom-bg-color-2">Màu Nền 2 (Gradient):</label>
+                                <input type="color" id="custom-bg-color-2" value="#E8C76F">
+                            </div>
+                            <div class="editor-group">
+                                <label for="custom-text-color">Màu Chữ:</label>
+                                <input type="color" id="custom-text-color" value="#5c4033">
+                            </div>
+                            <div class="editor-group">
+                                <label for="custom-top-emoji">Emoji Trên:</label>
+                                <input type="text" id="custom-top-emoji" placeholder="✨" maxlength="2">
+                            </div>
+                            <div class="editor-group">
+                                <label for="custom-bottom-emoji">Emoji Dưới:</label>
+                                <input type="text" id="custom-bottom-emoji" placeholder="🌿" maxlength="2">
+                            </div>
+                            <button type="button" class="btn-small" onclick="previewCustomTemplate()">👁️ Xem Trước</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Editor Area -->
+                <div class="card-editor-area">
+                    <h3>Tạo Lời Nhắn</h3>
+                    <form id="card-form" class="card-form">
+                        <div class="form-group">
+                            <label for="recipient-name">Người Nhận:</label>
+                            <input type="text" id="recipient-name" placeholder="VD: Mẹ, Chị Lan..." maxlength="30">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="card-message">Lời Nhắn (Tối đa 150 ký tự):</label>
+                            <textarea id="card-message" placeholder="Viết lời nhắn đặc biệt cho người nhận..." maxlength="150"></textarea>
+                            <div class="char-count"><span id="char-count">0</span>/150</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sender-name">Từ:</label>
+                            <input type="text" id="sender-name" placeholder="Tên của bạn..." maxlength="30">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="card-color">Màu Thiệp:</label>
+                            <div class="color-picker">
+                                <input type="radio" name="card-color" value="color-gold" id="color-gold" checked>
+                                <label for="color-gold" class="color-option color-gold" title="Vàng Quý Phái"></label>
+                                
+                                <input type="radio" name="card-color" value="color-green" id="color-green">
+                                <label for="color-green" class="color-option color-green" title="Xanh Lá Cây"></label>
+                                
+                                <input type="radio" name="card-color" value="color-rose" id="color-rose">
+                                <label for="color-rose" class="color-option color-rose" title="Hồng Nhạt"></label>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-primary btn-lg" onclick="addCardToCart()">Thêm Vào Giỏ Hàng</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <h2>Nhận Tin Tức Mới Nhất</h2>
+            <p>Đăng ký để nhận những ưu đãi độc quyền và thông tin về sản phẩm mới</p>
+            <div class="newsletter-form">
+                <input type="email" placeholder="Nhập email của bạn..." required>
+                <button class="btn btn-primary">Đăng Ký</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Về Chúng Tôi</h3>
+                <p>Trà Sâm Trường Nhân - Nơi bạn tìm thấy sâm ngọc linh chất lượng cao nhất từ Ngọc Linh.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liên Kết Nhanh</h3>
+                <ul>
+                    <li><a href="#products">Sản Phẩm</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Liên Hệ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kết Nối Với Chúng Tôi</h3>
+                <div class="social-links footer-social">
+                    <a href="https://www.instagram.com/p/DZt9NUGDzVb/" target="_blank" title="Instagram">📷 Instagram</a>
+                    <a href="https://www.youtube.com/results?search_query=sâm+ngọc+linh" target="_blank" title="YouTube">▶️ YouTube</a>
+                    <a href="https://shopee.vn/search?keyword=sâm+ngọc+linh+trường+nhân" target="_blank" title="Shopee">🛒 Shopee</a>
+                    <a href="https://www.tiktok.com/@samngoclinhtruongnhan" target="_blank" title="TikTok">🎵 TikTok</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Liên Hệ</h3>
+                <p>📞 Hotline: 1900 XXXX</p>
+                <p>📧 Email: info@trasamtruongnhan.com</p>
+                <p>📍 Địa chỉ: Ngọc Linh, Quảng Nam</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Trà Sâm Trường Nhân. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeCart()">&times;</span>
+            <h2>Giỏ Hàng</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <strong>Tổng Cộng: </strong>
+                <span id="cart-total">0₫</span>
+            </div>
+            <button class="btn btn-primary btn-lg" onclick="checkout()">Thanh Toán</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

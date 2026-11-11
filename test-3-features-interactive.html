@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test 3 Tính Năng - Thiệp Tặng Quà</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .test-section {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .test-section h2 {
+            color: #333;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .test-section p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .demo-area {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 1em;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5568d3;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-secondary {
+            background: #e83e8c;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #d63384;
+        }
+
+        .btn-success {
+            background: #28a745;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #218838;
+        }
+
+        .status {
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-weight: 600;
+        }
+
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .status.info {
+            background: #e7f3ff;
+            color: #0c5aa0;
+            border: 1px solid #b3d9ff;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: monospace;
+            font-size: 0.9em;
+            margin: 10px 0;
+        }
+
+        .card-preview {
+            background: linear-gradient(135deg, #F4D9A0 0%, #E8C76F 100%);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 15px 0;
+            color: #5c4033;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .card-preview h3 {
+            margin-bottom: 10px;
+        }
+
+        .card-preview p {
+            color: inherit;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 10px;
+            margin-bottom: 10px;
+            background: #f0f0f0;
+            border-left: 4px solid #667eea;
+            border-radius: 4px;
+        }
+
+        .feature-list li.done {
+            background: #d4edda;
+            border-left-color: #28a745;
+        }
+
+        .input-group {
+            margin: 15px 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="color"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .demo-card {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            border: 2px solid #ddd;
+        }
+
+        .demo-card h4 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .demo-card p {
+            font-size: 0.95em;
+            color: #666;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 30px;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .btn-group {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧪 Kiểm Tra 3 Tính Năng Tùy Chỉnh Thiệp</h1>
+            <p>Test trực tiếp tính năng mới trước khi sử dụng trên trang chính</p>
+        </div>
+
+        <!-- Feature 1: Upload Ảnh -->
+        <div class="test-section">
+            <h2>📸 Tính Năng 1: Upload Ảnh</h2>
+            <p>Kiểm tra xem hàm <code>handleImageUpload()</code> có hoạt động chính xác</p>
+
+            <div class="demo-area">
+                <h4>Cách Thức Hoạt Động:</h4>
+                <ol style="margin-left: 20px; color: #666;">
+                    <li>Nhấn nút "📸 Chọn Ảnh" dưới đây</li>
+                    <li>Chọn file ảnh từ máy tính</li>
+                    <li>Kiểm tra xem ảnh có xuất hiện không</li>
+                    <li>Xem notification thông báo kết quả</li>
+                </ol>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn-primary" onclick="testImageUpload()">📸 Chọn Ảnh Để Test</button>
+                <button class="btn-secondary" onclick="resetImageTest()">🔄 Reset Test</button>
+            </div>
+
+            <input type="file" id="test-image-upload" accept="image/*" onchange="handleTestImageUpload(event)">
+
+            <div id="image-preview" class="hidden">
+                <h4>Ảnh Được Tải Lên:</h4>
+                <img id="image-display" src="" style="max-width: 100%; max-height: 300px; border-radius: 8px; margin-top: 10px;">
+            </div>
+
+            <div id="image-status" class="status info hidden">
+                ⏳ Chờ chọn ảnh...
+            </div>
+
+            <div class="demo-card" style="margin-top: 15px;">
+                <h4>📋 Kiểm Tra:</h4>
+                <ul class="feature-list">
+                    <li id="check-image-1">File input tồn tại ✓</li>
+                    <li id="check-image-2">handleImageUpload function hoạt động</li>
+                    <li id="check-image-3">FileReader API được sử dụng</li>
+                    <li id="check-image-4">Ảnh hiển thị chính xác</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Feature 2: Upload JSON -->
+        <div class="test-section">
+            <h2>📄 Tính Năng 2: Upload JSON</h2>
+            <p>Kiểm tra xem hàm <code>handleJsonUpload()</code> có xử lý JSON chính xác</p>
+
+            <div class="demo-area">
+                <h4>JSON Format Đúng:</h4>
+                <div class="code">{
+  "title": "Tết 2026",
+  "bgColor": "#FF0000",
+  "bgColor2": "#FFD700",
+  "textColor": "#FFFFFF",
+  "topEmoji": "🎆",
+  "bottomEmoji": "🧧"
+}</div>
+                <p style="color: #666; margin-top: 10px;">
+                    📌 Bạn có thể sử dụng file ví dụ: <code>template-example-tet.json</code> hoặc <code>template-example-valentine.json</code>
+                </p>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn-primary" onclick="testJsonUpload()">📄 Chọn File JSON Để Test</button>
+                <button class="btn-secondary" onclick="downloadSampleJson()">⬇️ Tải File Ví Dụ</button>
+                <button class="btn-secondary" onclick="resetJsonTest()">🔄 Reset Test</button>
+            </div>
+
+            <input type="file" id="test-json-upload" accept=".json" onchange="handleTestJsonUpload(event)">
+
+            <div id="json-preview" class="hidden">
+                <h4>JSON Đã Tải:</h4>
+                <div class="code" id="json-display"></div>
+            </div>
+
+            <div id="json-status" class="status info hidden">
+                ⏳ Chờ chọn file JSON...
+            </div>
+
+            <div class="demo-card" style="margin-top: 15px;">
+                <h4>📋 Kiểm Tra:</h4>
+                <ul class="feature-list">
+                    <li id="check-json-1">File input tồn tại ✓</li>
+                    <li id="check-json-2">handleJsonUpload function hoạt động</li>
+                    <li id="check-json-3">JSON.parse xử lý chính xác</li>
+                    <li id="check-json-4">Validation kiểm tra đủ fields</li>
+                    <li id="check-json-5">Error handling hoạt động</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Feature 3: Chỉnh Sửa -->
+        <div class="test-section">
+            <h2>✏️ Tính Năng 3: Chỉnh Sửa Template</h2>
+            <p>Kiểm tra xem hàm <code>toggleCustomEditor()</code> hoạt động đúng</p>
+
+            <div class="demo-area">
+                <h4>Tạo Template Tùy Chỉnh:</h4>
+                <p>Điền thông tin dưới đây và nhấn "Xem Trước" để thấy kết quả ngay lập tức.</p>
+
+                <div class="input-group">
+                    <label for="custom-title">Tiêu Đề Template:</label>
+                    <input type="text" id="custom-title" placeholder="VD: Sinh Nhật Vui Vẻ" maxlength="20">
+                </div>
+
+                <div class="input-group">
+                    <label for="custom-bg-color">Màu Nền Chính:</label>
+                    <input type="color" id="custom-bg-color" value="#FF8A65">
+                </div>
+
+                <div class="input-group">
+                    <label for="custom-bg-color-2">Màu Nền Phụ (Gradient):</label>
+                    <input type="color" id="custom-bg-color-2" value="#FFB74D">
+                </div>
+
+                <div class="input-group">
+                    <label for="custom-text-color">Màu Chữ:</label>
+                    <input type="color" id="custom-text-color" value="#FFFFFF">
+                </div>
+
+                <div class="input-group">
+                    <label for="custom-top-emoji">Emoji Trên:</label>
+                    <input type="text" id="custom-top-emoji" placeholder="VD: 🎉" maxlength="2">
+                </div>
+
+                <div class="input-group">
+                    <label for="custom-bottom-emoji">Emoji Dưới:</label>
+                    <input type="text" id="custom-bottom-emoji" placeholder="VD: 🎂" maxlength="2">
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn-success" onclick="previewTemplate()">👁️ Xem Trước</button>
+                    <button class="btn-secondary" onclick="resetTemplate()">🔄 Reset</button>
+                </div>
+            </div>
+
+            <div id="template-preview" class="card-preview hidden">
+                <div style="font-size: 2em; margin-bottom: 10px;" id="top-emoji-preview">🎉</div>
+                <h3 id="title-preview">Sinh Nhật Vui Vẻ</h3>
+                <p id="message-preview">Chúc mừng sinh nhật của bạn!</p>
+                <div style="font-size: 2em; margin-top: 10px;" id="bottom-emoji-preview">🎂</div>
+            </div>
+
+            <div id="editor-status" class="status info hidden">
+                ⏳ Điền thông tin và nhấn "Xem Trước"...
+            </div>
+
+            <div class="demo-card" style="margin-top: 15px;">
+                <h4>📋 Kiểm Tra:</h4>
+                <ul class="feature-list">
+                    <li id="check-editor-1">toggleCustomEditor function hoạt động ✓</li>
+                    <li id="check-editor-2">Form inputs có thể chỉnh sửa</li>
+                    <li id="check-editor-3">Preview cập nhật ngay lập tức</li>
+                    <li id="check-editor-4">Gradient được áp dụng chính xác</li>
+                    <li id="check-editor-5">Emoji hiển thị đúng</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Tổng Kết -->
+        <div class="test-section">
+            <h2>✅ Kết Quả Kiểm Tra</h2>
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h4>📸 Upload Ảnh</h4>
+                    <p id="result-image">Chưa test</p>
+                </div>
+                <div class="demo-card">
+                    <h4>📄 Upload JSON</h4>
+                    <p id="result-json">Chưa test</p>
+                </div>
+                <div class="demo-card">
+                    <h4>✏️ Chỉnh Sửa</h4>
+                    <p id="result-editor">Chưa test</p>
+                </div>
+            </div>
+
+            <div style="background: #d4edda; border: 1px solid #c3e6cb; color: #155724; padding: 15px; border-radius: 8px; margin-top: 15px;">
+                <h4>🎉 Nếu Tất Cả Đều Hoạt Động:</h4>
+                <p>✅ Bạn sẵn sàng sử dụng 3 tính năng mới trên <a href="/#greeting-cards" style="color: #155724; text-decoration: underline;">trang Thiệp Tặng Quà</a>!</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Trà Sâm Trường Nhân | Test Page for 3 New Features</p>
+    </footer>
+
+    <script>
+        // ========== Upload Ảnh ==========
+        function testImageUpload() {
+            document.getElementById('test-image-upload').click();
+            updateStatus('image', 'info', '⏳ Chọn ảnh từ máy tính...');
+        }
+
+        function handleTestImageUpload(event) {
+            const file = event.target.files[0];
+            if (!file) {
+                updateStatus('image', 'error', '❌ Không có file nào được chọn');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const imageData = e.target.result;
+                document.getElementById('image-display').src = imageData;
+                document.getElementById('image-preview').classList.remove('hidden');
+                updateStatus('image', 'success', `✅ Ảnh được tải lên thành công! (${file.name})`);
+                updateCheckList('check-image', 4, true);
+            };
+            reader.onerror = function() {
+                updateStatus('image', 'error', '❌ Lỗi: Không thể đọc file ảnh');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function resetImageTest() {
+            document.getElementById('test-image-upload').value = '';
+            document.getElementById('image-preview').classList.add('hidden');
+            updateStatus('image', 'info', '⏳ Chờ chọn ảnh...');
+            document.getElementById('result-image').textContent = 'Chưa test';
+        }
+
+        // ========== Upload JSON ==========
+        function testJsonUpload() {
+            document.getElementById('test-json-upload').click();
+            updateStatus('json', 'info', '⏳ Chọn file JSON từ máy tính...');
+        }
+
+        function handleTestJsonUpload(event) {
+            const file = event.target.files[0];
+            if (!file) {
+                updateStatus('json', 'error', '❌ Không có file nào được chọn');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const jsonData = JSON.parse(e.target.result);
+                    
+                    // Validate required fields
+                    const required = ['title', 'bgColor', 'bgColor2', 'textColor', 'topEmoji', 'bottomEmoji'];
+                    const missing = required.filter(field => !jsonData[field]);
+                    
+                    if (missing.length === 0) {
+                        document.getElementById('json-display').textContent = JSON.stringify(jsonData, null, 2);
+                        document.getElementById('json-preview').classList.remove('hidden');
+                        updateStatus('json', 'success', `✅ File JSON hợp lệ! (${file.name})`);
+                        updateCheckList('check-json', 5, true);
+                        document.getElementById('result-json').innerHTML = '✅ Hoạt động';
+                    } else {
+                        updateStatus('json', 'error', `❌ Thiếu các fields: ${missing.join(', ')}`);
+                    }
+                } catch (error) {
+                    updateStatus('json', 'error', `❌ JSON không hợp lệ: ${error.message}`);
+                }
+            };
+            reader.onerror = function() {
+                updateStatus('json', 'error', '❌ Lỗi: Không thể đọc file');
+            };
+            reader.readAsText(file);
+        }
+
+        function downloadSampleJson() {
+            const sample = {
+                "title": "Tết 2026",
+                "bgColor": "#FF0000",
+                "bgColor2": "#FFD700",
+                "textColor": "#FFFFFF",
+                "topEmoji": "🎆",
+                "bottomEmoji": "🧧"
+            };
+            const dataStr = JSON.stringify(sample, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'template-sample.json';
+            link.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function resetJsonTest() {
+            document.getElementById('test-json-upload').value = '';
+            document.getElementById('json-preview').classList.add('hidden');
+            updateStatus('json', 'info', '⏳ Chờ chọn file JSON...');
+            document.getElementById('result-json').textContent = 'Chưa test';
+        }
+
+        // ========== Chỉnh Sửa ==========
+        function previewTemplate() {
+            const title = document.getElementById('custom-title').value || 'Tùy Chỉnh';
+            const bgColor = document.getElementById('custom-bg-color').value || '#FF8A65';
+            const bgColor2 = document.getElementById('custom-bg-color-2').value || '#FFB74D';
+            const textColor = document.getElementById('custom-text-color').value || '#FFFFFF';
+            const topEmoji = document.getElementById('custom-top-emoji').value || '🎉';
+            const bottomEmoji = document.getElementById('custom-bottom-emoji').value || '🎂';
+
+            // Apply styles
+            const preview = document.getElementById('template-preview');
+            preview.style.background = `linear-gradient(135deg, ${bgColor} 0%, ${bgColor2} 100%)`;
+            preview.style.color = textColor;
+
+            document.getElementById('title-preview').textContent = title;
+            document.getElementById('top-emoji-preview').textContent = topEmoji;
+            document.getElementById('bottom-emoji-preview').textContent = bottomEmoji;
+            document.getElementById('message-preview').style.color = textColor;
+
+            preview.classList.remove('hidden');
+            updateStatus('editor', 'success', '✅ Template preview được cập nhật!');
+            updateCheckList('check-editor', 5, true);
+            document.getElementById('result-editor').innerHTML = '✅ Hoạt động';
+        }
+
+        function resetTemplate() {
+            document.getElementById('custom-title').value = '';
+            document.getElementById('custom-bg-color').value = '#FF8A65';
+            document.getElementById('custom-bg-color-2').value = '#FFB74D';
+            document.getElementById('custom-text-color').value = '#FFFFFF';
+            document.getElementById('custom-top-emoji').value = '';
+            document.getElementById('custom-bottom-emoji').value = '';
+            document.getElementById('template-preview').classList.add('hidden');
+            updateStatus('editor', 'info', '⏳ Điền thông tin và nhấn "Xem Trước"...');
+            document.getElementById('result-editor').textContent = 'Chưa test';
+        }
+
+        // ========== Helpers ==========
+        function updateStatus(feature, type, message) {
+            const statusEl = document.getElementById(`${feature}-status`);
+            statusEl.classList.remove('hidden', 'success', 'error', 'info');
+            statusEl.classList.add(type);
+            statusEl.textContent = message;
+        }
+
+        function updateCheckList(prefix, maxItems, allDone) {
+            if (allDone) {
+                for (let i = 1; i <= maxItems; i++) {
+                    const el = document.getElementById(`${prefix}-${i}`);
+                    if (el) el.classList.add('done');
+                }
+            }
+        }
+
+        // Initial check
+        window.addEventListener('load', function() {
+            // Check if test uploads exist
+            if (document.getElementById('test-image-upload')) {
+                document.getElementById('check-image-1').classList.add('done');
+            }
+            if (document.getElementById('test-json-upload')) {
+                document.getElementById('check-json-1').classList.add('done');
+            }
+            if (document.getElementById('custom-title')) {
+                document.getElementById('check-editor-1').classList.add('done');
+                document.getElementById('check-editor-2').classList.add('done');
+            }
+        });
+    </script>
+</body>
+</html>

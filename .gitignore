@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build outputs
+*.css.map
+*.js.map
+dist/
+build/
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+
+# Documentation (optional - remove if you want to include these)
+# DEPLOYMENT.md
+# HUONG_DAN_DEPLOY.md
+
+# Temporary files
+*.tmp
+*.bak
+index.html.broken
+index.html.rebuilt
+index_part1.html
+build_part1.py

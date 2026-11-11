@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng Dẫn Sử Dụng 3 Tính Năng Mới</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h2 {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 1.6em;
+        }
+
+        .feature-icon {
+            font-size: 2em;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .steps {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .step {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .step-number {
+            background: #667eea;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .step-description {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .example {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .example strong {
+            color: #856404;
+        }
+
+        .code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            margin: 15px 0;
+        }
+
+        .success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5568d3;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .video-link {
+            display: inline-block;
+            background: #e83e8c;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .video-link:hover {
+            background: #d63384;
+        }
+
+        .note {
+            background: #e7f3ff;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            color: #0c5aa0;
+        }
+
+        .warning {
+            background: #ffe7e7;
+            border-left: 4px solid #f44336;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            color: #c62828;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            padding: 20px;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .feature-card {
+                padding: 20px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎨 Hướng Dẫn Sử Dụng 3 Tính Năng Mới</h1>
+            <p>Tùy Chỉnh Thiệp Tặng Quà của Bạn</p>
+        </div>
+
+        <!-- Feature 1: Upload Ảnh -->
+        <div class="feature-card">
+            <h2>
+                <span class="feature-icon">📸</span>
+                Tính Năng 1: Upload Ảnh
+            </h2>
+            
+            <p>Sử dụng hình ảnh của riêng bạn làm nền cho thiệp tặng!</p>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <div class="step-title">Nhấn nút "📸 Upload Ảnh"</div>
+                        <div class="step-description">Khi bạn nhấn nút này, một cửa sổ chọn file sẽ mở lên.</div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <div class="step-title">Chọn file ảnh từ máy tính</div>
+                        <div class="step-description">Bạn có thể chọn bất kỳ ảnh nào (JPG, PNG, GIF, v.v.)</div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <div class="step-title">Xem ảnh xuất hiện trên thiệp</div>
+                        <div class="step-description">Ảnh sẽ tự động hiển thị làm nền của thiệp. Chữ sẽ hiển thị màu trắng để dễ đọc.</div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <div class="step-title">Lưu hoặc Xuất</div>
+                        <div class="step-description">Nhấn "💾 Lưu" để lưu template này, hoặc "📤 Xuất" để tải file JSON.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example">
+                <strong>Ví dụ:</strong> Bạn có thể dùng ảnh cưới, ảnh gia đình, ảnh phong cảnh, hoặc bất kỳ ảnh nào bạn thích để làm thiệp độc đáo!
+            </div>
+
+            <div class="note">
+                <strong>💡 Lưu Ý:</strong> Ảnh sẽ được lưu trong bộ nhớ của trình duyệt (LocalStorage) cho đến khi bạn xóa cache trình duyệt.
+            </div>
+        </div>
+
+        <!-- Feature 2: Upload JSON -->
+        <div class="feature-card">
+            <h2>
+                <span class="feature-icon">📄</span>
+                Tính Năng 2: Upload File JSON
+            </h2>
+            
+            <p>Import template được thiết kế sẵn hoặc từ bạn bè chia sẻ!</p>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <div class="step-title">Nhấn nút "📄 Upload JSON"</div>
+                        <div class="step-description">Mở cửa sổ chọn file, tìm file JSON của template.</div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <div class="step-title">Chọn file JSON</div>
+                        <div class="step-description">File phải có định dạng đúng với các trường: title, bgColor, bgColor2, textColor, topEmoji, bottomEmoji</div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <div class="step-title">Template được áp dụng ngay</div>
+                        <div class="step-description">Thiệp sẽ cập nhật theo template từ file JSON.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example">
+                <strong>Format JSON đúng:</strong>
+                <div class="code">{
+  "title": "Tết 2026",
+  "bgColor": "#FF0000",
+  "bgColor2": "#FFD700",
+  "textColor": "#FFFFFF",
+  "topEmoji": "🎆",
+  "bottomEmoji": "🧧"
+}</div>
+            </div>
+
+            <div class="success">
+                ✅ Chúng tôi đã chuẩn bị 2 file template ví dụ cho bạn:
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li><strong>template-example-tet.json</strong> - Template cho Tết 2026</li>
+                    <li><strong>template-example-valentine.json</strong> - Template cho ngày Valentine</li>
+                </ul>
+            </div>
+
+            <div class="note">
+                <strong>💡 Lưu Ý:</strong> Bạn có thể chia sẻ file JSON với bạn bè, họ có thể import template của bạn chỉ bằng vài click!
+            </div>
+        </div>
+
+        <!-- Feature 3: Chỉnh Sửa -->
+        <div class="feature-card">
+            <h2>
+                <span class="feature-icon">✏️</span>
+                Tính Năng 3: Chỉnh Sửa Template Tùy Chỉnh
+            </h2>
+            
+            <p>Tạo template riêng của bạn với màu sắc, emoji, và tiêu đề tùy ý!</p>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <div class="step-title">Nhấn nút "✏️ Chỉnh Sửa"</div>
+                        <div class="step-description">Form chỉnh sửa sẽ xuất hiện với 6 trường input.</div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <div class="step-title">Điền các thông tin:</div>
+                        <div class="step-description">
+                            <ul style="margin-left: 20px; margin-top: 5px;">
+                                <li><strong>Tiêu Đề:</strong> Tên của template (VD: "Sinh Nhật Vui Vẻ")</li>
+                                <li><strong>Màu Nền:</strong> Chọn màu chính (click vào ô màu)</li>
+                                <li><strong>Màu Nền 2 (Gradient):</strong> Chọn màu phụ cho gradient</li>
+                                <li><strong>Màu Chữ:</strong> Chọn màu cho text</li>
+                                <li><strong>Emoji Trên:</strong> Emoji ở trên (VD: 🎉)</li>
+                                <li><strong>Emoji Dưới:</strong> Emoji ở dưới (VD: 🎂)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <div class="step-title">Nhấn "👁️ Xem Trước"</div>
+                        <div class="step-description">Template sẽ cập nhật ngay để bạn xem kết quả trước khi lưu.</div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <div class="step-title">Lưu hoặc Xuất</div>
+                        <div class="step-description">Nhấn "💾 Lưu" để lưu vào máy, hoặc "📤 Xuất" để tải JSON.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example">
+                <strong>Ví dụ:</strong>
+                <div class="code">Tiêu Đề: Chúc Mừng Năm Mới
+Màu Nền: #FF6B6B (Đỏ)
+Màu Nền 2: #FFE66D (Vàng)
+Màu Chữ: #FFFFFF (Trắng)
+Emoji Trên: 🎊
+Emoji Dưới: ✨</div>
+            </div>
+
+            <div class="note">
+                <strong>💡 Lưu Ý:</strong> Bạn có thể chỉnh sửa bao nhiêu lần tùy ý. Các thay đổi sẽ được xem trước ngay lập tức.
+            </div>
+        </div>
+
+        <!-- Tóm Tắt Quy Trình -->
+        <div class="feature-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+            <h2 style="color: white;">
+                <span class="feature-icon">📋</span>
+                Quy Trình Hoàn Chỉnh
+            </h2>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px; margin-top: 15px;">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.3); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">1️⃣</div>
+                    <div>
+                        <strong>Chọn / Tạo Template:</strong>
+                        <div style="opacity: 0.9; font-size: 0.95em;">Upload ảnh, upload JSON, hoặc chỉnh sửa tùy chỉnh</div>
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.3); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">2️⃣</div>
+                    <div>
+                        <strong>Xem Trước (Preview):</strong>
+                        <div style="opacity: 0.9; font-size: 0.95em;">Thiệp sẽ cập nhật theo template bạn chọn</div>
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.3); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">3️⃣</div>
+                    <div>
+                        <strong>Viết Lời Nhắn:</strong>
+                        <div style="opacity: 0.9; font-size: 0.95em;">Nhập lời nhắn, tên người nhận, tên bạn</div>
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div style="background: rgba(255,255,255,0.3); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">4️⃣</div>
+                    <div>
+                        <strong>Thêm Vào Giỏ Hàng:</strong>
+                        <div style="opacity: 0.9; font-size: 0.95em;">Nhấn "Thêm Vào Giỏ Hàng" và tiến hành đặt hàng</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Troubleshooting -->
+        <div class="feature-card">
+            <h2>
+                <span class="feature-icon">🔧</span>
+                Khắc Phục Sự Cố
+            </h2>
+
+            <div class="warning">
+                <strong>❌ Nút Upload không hoạt động?</strong>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Hãy kiểm tra xem đã chọn đúng loại file (ảnh cho upload ảnh, JSON cho upload JSON)</li>
+                    <li>Thử refresh lại trang (F5 hoặc Ctrl+R)</li>
+                    <li>Kiểm tra xem trình duyệt có hỗ trợ FileReader API không (Chrome, Firefox, Safari, Edge)</li>
+                </ul>
+            </div>
+
+            <div class="warning">
+                <strong>❌ Template không thay đổi?</strong>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Hãy nhấn "👁️ Xem Trước" sau khi chỉnh sửa để áp dụng thay đổi</li>
+                    <li>Kiểm tra xem đã chọn đúng template không (nút template phải bị highlight)</li>
+                </ul>
+            </div>
+
+            <div class="warning">
+                <strong>❌ File JSON không được import?</strong>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Hãy kiểm tra format JSON (phải có: title, bgColor, bgColor2, textColor, topEmoji, bottomEmoji)</li>
+                    <li>Không nên edit JSON file bằng Word, dùng Notepad hoặc editor khác</li>
+                    <li>Có thể dùng file ví dụ để test (template-example-tet.json)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="feature-card" style="text-align: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+            <h2 style="color: white; justify-content: center;">
+                <span class="feature-icon">🚀</span>
+                Sẵn Sàng Bắt Đầu?
+            </h2>
+            <p>Hãy quay lại trang chính và thử những tính năng mới này!</p>
+            <div class="button-group" style="justify-content: center;">
+                <a href="/#greeting-cards" class="btn btn-primary" style="text-decoration: none;">Đến Phần Thiệp</a>
+                <a href="/" class="btn btn-secondary" style="text-decoration: none;">Trang Chủ</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Trà Sâm Trường Nhân | Thương Trà Cao Cấp Ngọc Linh</p>
+        <p>Hệ thống thiệp tặng quà được cập nhật với 3 tính năng mới</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Greeting Card Preview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #f0f8f5 0%, #e8f5f0 100%);
+            padding: 40px 20px;
+        }
+
+        .demo-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .demo-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .demo-section {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(125, 190, 111, 0.12);
+        }
+
+        .demo-section h2 {
+            color: #7DBE6F;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        /* Card Preview */
+        .card-preview {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+        }
+
+        .card-inner {
+            width: 280px;
+            height: 340px;
+            padding: 20px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, #F4D9A0 0%, #E8C76F 100%);
+            color: #5c4033;
+        }
+
+        .card-decoration {
+            font-size: 2.5rem;
+        }
+
+        .card-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #3e2723;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+            margin: 0.5rem 0;
+        }
+
+        .card-message {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 1rem 0;
+            font-style: italic;
+            opacity: 0.9;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-signature {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            opacity: 0.8;
+        }
+
+        /* Form Styles */
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: 600;
+            color: #333;
+            font-size: 0.95rem;
+        }
+
+        input, textarea {
+            padding: 10px;
+            border: 2px solid #d4e8e0;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #7DBE6F;
+            background: #f0f8f5;
+            box-shadow: 0 0 0 3px rgba(125, 190, 111, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .char-count {
+            font-size: 0.85rem;
+            color: #999;
+            text-align: right;
+        }
+
+        .color-picker {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .color-option {
+            width: 100%;
+            aspect-ratio: 1;
+            border: 3px solid transparent;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .color-option:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .color-gold {
+            background: linear-gradient(135deg, #F4D9A0 0%, #E8C76F 100%);
+        }
+
+        .color-green {
+            background: linear-gradient(135deg, #A8D5BA 0%, #7DBE6F 100%);
+        }
+
+        .color-rose {
+            background: linear-gradient(135deg, #F8D7DA 0%, #F5C6CB 100%);
+        }
+
+        .button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #7DBE6F 0%, #5F9E56 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(125, 190, 111, 0.3);
+        }
+
+        .features {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(125, 190, 111, 0.12);
+            margin-top: 30px;
+        }
+
+        .features h3 {
+            color: #7DBE6F;
+            margin-bottom: 15px;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #555;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #7DBE6F;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .demo-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .card-inner {
+                height: 300px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1>🎁 Thiệp Trang Trí - Demo Tương Tác</h1>
+        <p class="subtitle">Viết lời nhắn và xem trước thiệp theo thời gian thực</p>
+
+        <div class="demo-layout">
+            <!-- Preview -->
+            <div class="demo-section">
+                <h2>Xem Trước Thiệp</h2>
+                <div class="card-preview">
+                    <div class="card-inner" id="preview-card">
+                        <div class="card-decoration">✨</div>
+                        <h3 class="card-title">Tặng Yêu Thương</h3>
+                        <p class="card-message" id="preview-message">Viết lời nhắn của bạn tại đây...</p>
+                        <p class="card-signature" id="preview-signature">—</p>
+                        <div class="card-decoration">🌿</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Editor -->
+            <div class="demo-section">
+                <h2>Tạo Lời Nhắn</h2>
+                <div class="form-group">
+                    <label for="card-message">Lời Nhắn (Tối đa 150 ký tự):</label>
+                    <textarea id="card-message" placeholder="Viết lời nhắn đặc biệt..." maxlength="150"></textarea>
+                    <div class="char-count"><span id="char-count">0</span>/150</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="sender-name">Từ:</label>
+                    <input type="text" id="sender-name" placeholder="Tên của bạn..." maxlength="30">
+                </div>
+
+                <div class="form-group">
+                    <label>Chọn Màu Thiệp:</label>
+                    <div class="color-picker">
+                        <div class="color-option color-gold" onclick="updateCardColor('gold')"></div>
+                        <div class="color-option color-green" onclick="updateCardColor('green')"></div>
+                        <div class="color-option color-rose" onclick="updateCardColor('rose')"></div>
+                    </div>
+                </div>
+
+                <button class="button" onclick="addCardToCart()">Thêm Vào Giỏ Hàng</button>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="features">
+            <h3>✨ Tính Năng Thiệp Trang Trí</h3>
+            <ul class="feature-list">
+                <li><strong>Xem Trước Thời Gian Thực:</strong> Lời nhắn được cập nhật ngay khi bạn gõ</li>
+                <li><strong>3 Mẫu Thiệp:</strong> Vàng Quý Phái, Xanh Lá Cây, Hồng Nhạt</li>
+                <li><strong>Tùy Chọn Màu Sắc:</strong> Chọn màu nền yêu thích cho thiệp</li>
+                <li><strong>Miễn Phí Khi Mua:</strong> Thiệp được tặng kèm khi khách hàng mua sản phẩm</li>
+                <li><strong>Đơn Giản & Đẹp:</strong> Giao diện thân thiện, dễ sử dụng</li>
+                <li><strong>Tích Hợp Giỏ Hàng:</strong> Thêm thiệp vào giỏ hàng và thanh toán chung</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Xử lý nhập liệu lời nhắn
+        document.getElementById('card-message').addEventListener('input', function() {
+            updatePreview();
+            updateCharCount();
+        });
+
+        // Xử lý nhập liệu tên người gửi
+        document.getElementById('sender-name').addEventListener('input', function() {
+            updatePreview();
+        });
+
+        function updatePreview() {
+            const message = document.getElementById('card-message').value || 'Viết lời nhắn của bạn tại đây...';
+            const sender = document.getElementById('sender-name').value;
+            
+            document.getElementById('preview-message').textContent = message;
+            document.getElementById('preview-signature').textContent = sender ? `— ${sender}` : '—';
+        }
+
+        function updateCharCount() {
+            const count = document.getElementById('card-message').value.length;
+            document.getElementById('char-count').textContent = count;
+        }
+
+        function updateCardColor(color) {
+            const card = document.getElementById('preview-card');
+            card.classList.remove('color-gold', 'color-green', 'color-rose');
+            
+            const colorMap = {
+                'gold': 'linear-gradient(135deg, #F4D9A0 0%, #E8C76F 100%)',
+                'green': 'linear-gradient(135deg, #A8D5BA 0%, #7DBE6F 100%)',
+                'rose': 'linear-gradient(135deg, #F8D7DA 0%, #F5C6CB 100%)'
+            };
+            
+            card.style.background = colorMap[color];
+        }
+
+        function addCardToCart() {
+            const message = document.getElementById('card-message').value;
+            const sender = document.getElementById('sender-name').value;
+            
+            if (!message.trim()) {
+                alert('⚠️ Vui lòng viết lời nhắn!');
+                return;
+            }
+
+            if (!sender.trim()) {
+                alert('⚠️ Vui lòng nhập tên của bạn!');
+                return;
+            }
+
+            alert('✅ Thiệp được thêm vào giỏ hàng!\n\nLời nhắn: "' + message + '"\nTừ: ' + sender);
+            document.getElementById('card-message').value = '';
+            document.getElementById('sender-name').value = '';
+            updatePreview();
+            updateCharCount();
+        }
+    </script>
+</body>
+</html>
