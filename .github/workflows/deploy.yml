@@ -1,0 +1,31 @@
+name: Deploy to BKNS
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Deploy to BKNS FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.FTP_HOST }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./
+        server-dir: ${{ secrets.FTP_REMOTE_PATH }}
+        dangerous-clean-slate: false
+    
+    - name: Deployment Success
+      if: success()
+      run: echo "✅ Deployment to BKNS successful!"
+    
+    - name: Deployment Failed
+      if: failure()
+      run: echo "❌ Deployment to BKNS failed! Check FTP credentials."
